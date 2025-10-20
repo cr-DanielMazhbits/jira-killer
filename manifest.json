@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Jira Field Filler",
+  "version": "1.0",
+  "description": "Automatically fill Jira fields with predefined values",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://cybereason.atlassian.net/*",
+    "http://monithor.cybereason.net:9966/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Fill Jira Fields"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://cybereason.atlassian.net/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

@@ -1,0 +1,135 @@
+/* Jira Field Filler Content Script Styles */
+/* Additional styles for injected elements */
+
+.jira-fill-button {
+    background: #0052cc !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 3px !important;
+    margin-left: 8px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 100px !important;
+    height: 32px !important;
+    box-sizing: border-box !important;
+}
+
+.jira-fill-button:hover:not(:disabled) {
+    background: #0065ff !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 4px rgba(0, 82, 204, 0.2) !important;
+}
+
+.jira-fill-button:active:not(:disabled) {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 2px rgba(0, 82, 204, 0.2) !important;
+}
+
+.jira-fill-button:disabled {
+    background: #666 !important;
+    cursor: not-allowed !important;
+    opacity: 0.7 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.jira-status {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    padding: 12px 20px !important;
+    border-radius: 4px !important;
+    color: white !important;
+    font-weight: bold !important;
+    z-index: 10000 !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 14px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    max-width: 300px !important;
+    word-wrap: break-word !important;
+    animation: slideIn 0.3s ease-out !important;
+}
+
+.jira-status-success {
+    background: #28a745 !important;
+    border: 1px solid #1e7e34 !important;
+}
+
+.jira-status-error {
+    background: #dc3545 !important;
+    border: 1px solid #bd2130 !important;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Ensure button doesn't interfere with Jira's layout */
+.jira-fill-button {
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .jira-status {
+        top: 10px !important;
+        right: 10px !important;
+        left: 10px !important;
+        max-width: none !important;
+    }
+    
+    .jira-fill-button {
+        font-size: 12px !important;
+        padding: 6px 12px !important;
+        min-width: 80px !important;
+        height: 28px !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .jira-fill-button {
+        background: #0065ff !important;
+    }
+    
+    .jira-fill-button:hover:not(:disabled) {
+        background: #007bff !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .jira-fill-button {
+        border: 2px solid #000 !important;
+    }
+    
+    .jira-status {
+        border: 2px solid #000 !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .jira-fill-button {
+        transition: none !important;
+    }
+    
+    .jira-status {
+        animation: none !important;
+    }
+}
