@@ -58,7 +58,7 @@ async function completeTicket() {
     try {
         // Send all required fields with proper Jira API formatting
         const fields = {
-            customfield_13812: 10,  // Story Points
+            customfield_13812: 2,  // Story Points
             customfield_16030: 8,  // Estimated Story Points
             customfield_16195: 7,   // Actual Story Points
             customfield_16657: [{ value: "N/A" }],  // Tested on Tag(s)? (array format)
